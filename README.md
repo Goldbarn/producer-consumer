@@ -38,3 +38,6 @@ g++ consumer.cpp -pthread -lrt -o consumer
 ./producer & ./consumer &
 ```
 
+## Examples
+
+Provided in [output.txt](output.txt)
