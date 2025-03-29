@@ -20,8 +20,6 @@ The consumer waits on full, and then sets all of the 1s to 0s. After that it pas
 
 After all of that, they both close the memory by unlinking AND closing it. It may be a bit redundant, but I did it in both of them to ensure compliance.
 
-An example of the code running is provided in output.txt
-
 ## The Madness
 
 For some reason, at the very beginning, both of the processes have access to the critical section, so they both execute at the same time. I tried a few ways to remedy this, but they all seemed to create more problems and damage performance. So, I stayed with this method, that does, in fact, work for all of the execution time after the first 3 exchanges. Such is an issue that could be easily worked around in a professional context, so I found it acceptable to leave in, seeing as I could not figure out a way to fix it.
@@ -31,4 +29,12 @@ Also it was getting close to the deadline.
 I did not intend to submit this all at once. I fully intended to submit this in bite-sized chunks, but it ended up very messy and I only decided to submit when I had it done.
 
 Thank you for the lesson, Professor Guan!
+
+## To Compile and Run
+
+```
+g++ producer.cpp -pthread -lrt -o producer
+g++ consumer.cpp -pthread -lrt -o consumer
+./producer & ./consumer &
+```
 
