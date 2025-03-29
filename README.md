@@ -22,6 +22,8 @@ After all of that, they both close the memory by unlinking AND closing it. It ma
 
 ## The Madness
 
+For some reason, at the very beginning, both of the processes have access to the critical section, so they both execute at the same time. I tried a few ways to remedy this, but they all seemed to create more problems and damage performance. So, I stayed with this method, that does, in fact, work for all of the execution time after the first 3 exchanges. Such is an issue that could be easily worked around in a professional context, so I found it acceptable to leave in, seeing as I could not figure out a way to fix it.
+
 I did not intend to submit this all at once. I fully intended to submit this in bite-sized chunks, but it ended up very messy and I only decided to submit when I had it done.
 
 Thank you for the lesson, Professor Guan!
